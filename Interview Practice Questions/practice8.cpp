@@ -19,7 +19,21 @@ int main(){
         }
         cout<<"\n";
     }
-    
+    int maxarr[r];
+    int counter=0;
+    for(int i=0;i<r;i++){
+        for(int j=0;j<c-1;j++){
+            if(a[i][j]<a[i][j+1]){
+                int max=a[i][j+1];
+                maxarr[counter]=max;
+                counter++;
+            }
+        }
+    }
+    cout<<"The max element from each row: "<<"\n";
+    for(int i=0;i<r;i++){
+        cout<<maxarr[i]<<" ";
+    }
 
 
     return 0;
