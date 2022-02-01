@@ -51,11 +51,58 @@ int main(){
 
     //pattern-5
     cout<<"Pattern-5"<<"\n";
-    for(int i=1;i<=9;i++){
-        for(int j=1;j<=9-i;j++){
+    for(int i=1;i<=5;i++){
+        int j;
+        for(j=1;j<=5-i;j++){
             cout<<" ";
         }
-        
+        int k=i;
+        for(;j<=5;j++){
+            cout<<k--;
+        }
+        k=2;
+        for(;j<=5+i-1;j++){
+            cout<<k++;
+        }
+        cout<<"\n";
+    }
+
+    //pattern-6
+    cout<<"Pattern-6"<<"\n";
+    for(int i=1;i<=5;i++){
+        int j;
+        for(j=1;j<=5-i;j++){
+            cout<<" ";
+        }
+        for(;j<=5;j++){
+            cout<<"*";
+        }
+        for(;j<=5+i-1;j++){
+            cout<<"*";
+        }
+        cout<<"\n";
+    }
+    for(int i=5;i>=1;i--){
+        for(int j=1;j<=5-i;j++){
+            cout<<" ";
+        }
+        for(int j=1;j<=2*i-1;j++){
+            cout<<"*";
+        }
+        cout<<"\n";
+    }
+
+    //pattern-7
+    cout<<"Pattern-7"<<"\n";
+    for(int i=1;i<=3;i++){
+        for(int j=1;j<=9;j++){
+            if(((i+j)%4==0) || (i==2 && j%4==0)){
+                cout<<"*";
+            }else{
+                cout<<" ";
+            } 
+        }
+        cout<<"\n";
     }
 
 
