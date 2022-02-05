@@ -30,15 +30,60 @@ void PrintFibonacci(int a){
         cout<<f3<<" ";
     }
     cout<<"\n";
-    
 }
+
+void PrintFactorial(int a){
+    int fact=1;
+    for(int i=1;i<=a;i++){
+        fact=fact*i;
+    }
+    cout<<"Factorial of the number: "<<fact<<"\n";
+    cout<<"\n";
+}
+int fact(int a){
+    int fact1=1;
+    for(int i=1;i<=a;i++){
+        fact1*=i;
+    }
+    return fact1;
+}
+
+void PrintCombination(int n,int r){
+    int comb=fact(n)/(fact(r)*fact(n-r));
+    cout<<"Combination of outcomes: "<<comb<<"\n";
+    cout<<"\n";
+}
+
+int combination(int n,int r){
+    return fact(n)/(fact(r)*fact(n-r));
+}
+
+void PrintPascalTriangle(int n){
+    cout<<"The Pascal Triangle would be: "<<"\n";
+    for(int i=0;i<n;i++){
+        for(int j=0;j<=i;j++){
+            int value=combination(i,j);
+            cout<<value<<" ";
+        }
+        cout<<"\n";
+    }
+    cout<<"\n";
+}
+
 
 int main(){
     int a,b;
     cout<<"Enter Two Numbers for Operation: "<<"\n";
     cin>>a>>b;
+    int n,r;
+    cout<<"Enter range for combination: "<<"\n";
+    cin>>n>>r;
     PrintPrimeNumber(a,b);
     PrintFibonacci(a);
+    PrintFactorial(a);
+    PrintCombination(n,r);
+    PrintPascalTriangle(6);
+    
 
     return 0;
 }
