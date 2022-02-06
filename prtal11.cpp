@@ -76,18 +76,39 @@ void ConvDtoH(int decimal){
     while(decimal!=0){
         int rem=decimal%16;
         if(rem>=10){
-            hexa+=string(rem+55);
+            hexa+=char(rem+55);
+        }
+        else{
+            hexa+=to_string(rem);
         }
         decimal/=16;
     }
+    hexa=string(hexa.rbegin(),hexa.rend());
+    cout<<"Hexadecimal conversion of Decimal: "<<hexa<<"\n";
 }
-void ConvHtoD(int hexa){
-
+void ConvHtoD(string hexa){
+    int i=hexa.length()-1,dec=0,counter=0,hex;
+    while(i>=0){
+        hex=int(hexa[i]-'0');
+        if(hex<=9){
+            dec+=pow(16,counter)*hex;
+            counter++;
+        }else{
+            hex=hex-7;
+            dec+=pow(16,counter)*hex;
+            counter++;
+        }
+        i--;
+    }
+    cout<<"Decimal conversion of Hexadecimal: "<<dec<<"\n";
+    cout<<"\n";
 }
 
 //Sum of Binary Numbers
 void SumOfBin(int bin1,int bin2){
-
+    int result= bin1|bin2;
+    cout<<"The Sum of binary numbers: "<<result<<"\n"; //wrong answer
+    cout<<"\n";
 }
 
 
@@ -98,5 +119,8 @@ int main(){
     ConvBtoD(1010);
     ConvDtoO(32);
     ConvOtoD(40);
+    ConvDtoH(1235);
+    ConvHtoD("4D3");
+    SumOfBin(1010,1000);
     return 0;
 }
