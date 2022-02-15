@@ -49,11 +49,6 @@ void InsertionSort(int arr[],int n){
     PrintArray(arr,n);
 }
 
-
-
-
-
-
 int main(){
     int n=6;
     int arr[n]={5,4,7,8,9,12};
