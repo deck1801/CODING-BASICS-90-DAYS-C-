@@ -37,7 +37,7 @@ int main(){
         cout<<"\n";
     }
 
-    //pattern-4
+    //pattern-4 
     cout<<"Pattern-4"<<"\n";
     for(int i=1;i<=5;i++){
         for(int j=1;j<=5-i;j++){
@@ -101,6 +101,18 @@ int main(){
             }else{
                 cout<<" ";
             } 
+        }
+        cout<<"\n";
+    }
+    
+    //pattern-8
+    cout<<"Pattern-8"<<"\n";
+    for(int i=1;i<=5;i++){
+        for(int j=1;j<i;j++){
+            cout<<" ";
+        }
+        for(int j=5;j>=i;j--){
+            cout<<"*";
         }
         cout<<"\n";
     }
