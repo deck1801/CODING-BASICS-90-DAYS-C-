@@ -17,22 +17,37 @@ void SumSubarray(int arr[],int n){
 
 void LongestArithmaticSubarray(int a[],int n){
     //Arithmatic array: it is the array that contains at least two integers 
-    // and the differnces between the consecutive integers are equala
-    for(int i=0;i<n;i++){
-        for(int j=i;j<n;j++){
-            int count=0;
-            int prev=0,curr=0;
-            curr=a[j]-a[j+1];
-            if(curr!=prev){
-                prev=curr;
-            }else{
-                count++;
-                prev=curr;
-            }
+    // and the differnces between the consecutive integers are equal.
+    int ans=2,pd=a[1]-a[0],j=2,curr=2;
+    while(j<n){
+        if(pd==a[j]-a[j-1]){
+            curr++;
+        }else{
+            pd=a[j]-a[j-1];
+            curr=2;
         }
+        ans=max(ans,curr);
+        j++;
     }
+    cout<<"The length of longest Arithmatic Subarray: "<<ans<<"\n";
+    cout<<"\n";
+}
 
-
+void RecordbreakingDay(int a[],int n){
+    a[n+1];
+    a[n]=-1;
+    if(n==1){
+        cout<<"1"<<"\n";
+    }
+    int ans=0;
+    int mx=-1;
+    for(int i=0;i<n;i++){
+        if(a[i]>mx && a[i]>a[i+1]){
+            ans++;
+        }
+        mx=max(mx,a[i]);
+    }
+    cout<<"The Number of Record Breaking Days: "<<ans<<"\n";
 }
 
 
@@ -44,6 +59,9 @@ int main(){
     }
     cout<<"\n";
     SumSubarray(a,10);
+    LongestArithmaticSubarray(a,10);
+    int b[8]={1,2,0,7,2,0,2,2};
+    RecordbreakingDay(b,8);
     
     return 0;
 }
