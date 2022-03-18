@@ -87,7 +87,26 @@ void CirularMaxSubArraySum(int a[],int n){
     }
     wrapsum=totalsum+kadaneAlgo(a,n);
     cout<<"The Circular Subarray maximum sum: "<<max(wrapsum,nwrapsum)<<"\n";
+}
 
+void PairSum(int a[],int n,int s){
+    int low=0,high=n-1;
+    int flag=0;
+    while(low<high){
+       if(a[low]+a[high]==s){
+           flag=1;
+           cout<<"Pair exsists"<<"\n";
+           break;
+       }else if(a[low]+a[high]<s)
+       {
+           low++;
+        }else if(a[low]+a[high]>s){
+            high--;
+        }
+    }
+    if(flag==0){
+        cout<<"Pair doesn't exsist"<<"\n";
+    }
 }
 
 
@@ -99,6 +118,8 @@ int main(){
     HYPMaxSubArraySum(a,4);
     int b[7]={4,-4,6,-6,10,-11,12};
     CirularMaxSubArraySum(b,7); 
+    int c[8]={2,4,7,11,14,16,20,21};
+    PairSum(c,8,31);
 
     return 0;
 }

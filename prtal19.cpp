@@ -48,6 +48,7 @@ void SubarraySum(int a[],int n,int s){
             sum-=a[i];
             i++;
         }
+        
         if(sum==s){
             st=i+1;
             en=j+1;
