@@ -80,14 +80,6 @@ void Matrix2DSearch(int a[ul][ll],int n1,int n2){
      }
 
 }
-
-
-
-
-
-
-
-
 int main(){
     int a[ul][ll],n1=3,n2=4;
     int b[ul][ll],n3=4,n4=3;
