@@ -45,6 +45,55 @@ void NormalFibonacci(int n){
         f1=f2;
         f2=f3;
     }
+    cout<<"\n";
+}
+
+bool SortArray(int arr[],int n){
+    if(n==1){
+        return true;
+    }
+    bool nextarray=SortArray(arr+1,n-1);
+    return (arr[0]<arr[1] && nextarray);
+}
+
+void DpNum(int n){
+    if(n==0){
+        return;
+    }
+    cout<<n<<" ";
+    DpNum(n-1);
+}
+
+void IpNum(int n){
+    if(n==0){
+        return;
+    }
+    IpNum(n-1);
+    cout<<n<<" ";
+}
+
+int FirstOCC(int arr[],int n,int i,int key){
+    if(i==n){
+        return -1;
+    }
+    if(arr[i]==key){
+        return i;
+    }
+    return FirstOCC(arr,n,i+1,key);
+}
+
+int LastOCC(int arr[],int n,int i,int key){
+    if(i==n){
+        return -1;
+    }
+    int presult= LastOCC(arr,n,i+1,key);
+    if(presult!=-1){
+        return presult;
+    }
+    if(arr[i]==key){
+        return i;
+    }
+    return -1;
 }
 
 
@@ -55,5 +104,20 @@ int main(){
     cout<<"Recursion 4:Fibonacci of a number = "<<Fibonacci(5)<<"\n";
     cout<<"Normal Fibonacci Series: "<<"\n";
     NormalFibonacci(5);
+    int arr[5]={5,4,3,2,1};
+    cout<<"Print arr: "<<*(arr)<<"\n";
+    cout<<"Print arr+1: "<<*(arr+1)<<"\n";
+    cout<<"Recusrion 5: Check Sorted Array = "<<SortArray(arr,5);
+    cout<<"Recursion 6: Decresing order number = "<<"\n";
+    DpNum(5);
+    cout<<"\n";
+    cout<<"Recusrion 7: Increasing order number = "<<"\n";
+    IpNum(5);
+    cout<<"\n";
+    int arr1[6]={4,2,1,2,2,7};
+    cout<<"Recursion 8: First Occurence in array = "<<FirstOCC(arr1,6,0,2)<<"\n";
+    cout<<"Recursion 9: Last Occurence in array = "<<LastOCC(arr1,6,0,2)<<"\n";
+
+
     return 0;
 }
