@@ -19,7 +19,7 @@ int main(){
     cin.ignore();
     getline(cin,str3);
     cout<<"Output 3: "<<str3<<"\n";
-    
+                   
     string s1="fam",s2="ily";
     s1.append(s2);
     cout<<"The append operation: "<<s1<<"\n"; //change in s1
